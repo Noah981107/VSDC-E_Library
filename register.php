@@ -16,8 +16,6 @@
                 <TD><input type='text' name='title' required></TD></TR>
                 <TR> <TD>Author : </TD>
                 <TD><input type='text' name='author' required></TD></TR>
-                <TR> <TD>Contents of the book : </TD>
-                <TD><input type='file' name='contents' required></TD></TR>
                 <TR> <TD colspan = 2>
                 <input type='submit' value='Register Book Information'></TD></TR>
             </TABLE>
