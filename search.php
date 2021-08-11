@@ -15,6 +15,7 @@
             </select>
             <input type = "text" name = "search" size = "40" required = "required" /> 
             <button>search</button>
+        </div>  
         </form>
         <footer>
             <?php include "footer.php";?>
