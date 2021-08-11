@@ -1,9 +1,8 @@
 <?php 
+    include "../db.php";
+?>
+<?php 
     if(isset($_FILES['image'])){
-        echo "<pre>";
-        print_r($_FILES['image']);
-        echo "</pre>";
-
         $img_name = $_FILES['image']['name'];
         $img_size = $_FILES['image']['size'];
         $tmp_name = $_FILES['image']['tmp_name'];
@@ -32,11 +31,6 @@
                     $img_upload_path = '../bookImage/'.$new_img_name;
                     move_uploaded_file($tmp_name, $img_upload_path);
                     
-                    $conn = mysqli_connect("localhost", "root", "000000", "e_library");
-                    if (mysqli_connect_errno())
-                    {
-                        echo "Failed to connect to MySQL: " . mysqli_connect_error();
-                    }
                     $sql = "INSERT INTO book(image, title, author, registered_date)
                             VALUES('{$new_img_name}', '{$title}', '{$author}', '{$registeredDate}')";
                     mysqli_query($conn, $sql);
