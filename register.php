@@ -16,6 +16,8 @@
                 <TD><input type='text' name='title' required></TD></TR>
                 <TR> <TD>Author : </TD>
                 <TD><input type='text' name='author' required></TD></TR>
+                <TR> <TD>File to upload : </TD>
+                <TD><input type='file' name='file' required></TD></TR>
                 <TR> <TD colspan = 2>
                 <input type='submit' value='Register Book Information'></TD></TR>
             </TABLE>
