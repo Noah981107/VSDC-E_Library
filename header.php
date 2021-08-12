@@ -1,4 +1,5 @@
 <link rel="stylesheet" type="text/css" href="./css/header.css">
+
 <h1 id = "test">VSDC E-Library</h1>
 <?php 
   session_start();
@@ -8,20 +9,20 @@
   else $userName = "";
 ?>
               <div class="topnav">
-                <a href="index.php">Home</a>
-                <a href="search.php">Search</a>
+                <a href="../index.php">Home</a>
+                <a href="../search.php">Search</a>
 <?php 
   if(!$userId){
 ?>
-                <a href="logIn.php">Log in</a>
-                <a href="signUp.php">Sign up</a>
+                <a href="../logIn.php">Log in</a>
+                <a href="../signUp.php">Sign up</a>
 <?php
   }
   else{
 ?>
-                <a href = "register.php">Register</a>
-                <a href = "logOut.php">Log Out</a>
-                <a href = "myPage.php">My Page</a>
+                <a href = "../register.php">Register</a>
+                <a href = "../logOut.php">Log Out</a>
+                <a href = "../myPage.php">My Page</a>
 <?php
   }
 ?>
