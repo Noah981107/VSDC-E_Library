@@ -2,11 +2,10 @@
     include "../db.php";
 ?>
 <?php 
-  session_start();
-  if(isset($_SESSION["file_orig_name"])) $file_orig_name = $_SESSION["file_orig_name"];
+  if(isset($_GET["orig"])) $file_orig_name = $_GET["orig"];
   else $file_orig_name = "";
-  if(isset($_SESSION["file_save_name"])) $file_save_name = $_SESSION["file_save_name"];
-  else $$file_save_name = "";
+  if(isset($_GET["save"])) $file_save_name = $_GET["save"];
+  else $file_save_name = "";
 ?>
 <?php 
     echo($file_orig_name);

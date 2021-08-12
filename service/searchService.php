@@ -34,7 +34,7 @@
             }
             else{
                 $board = mysqli_fetch_assoc($sqlResult);
-                while($sqlMatch > 0){
+                for($i=0; $i<$sqlMatch; $i+=1){
                     $sqlMatch -= 1;
                     $image = $board['image'];
                     echo "<img src = '../bookImage/$image'>";

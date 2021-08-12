@@ -10,12 +10,21 @@
         <form action ="/service/registerService.php" method="POST" enctype='multipart/form-data'>
             <INPUT TYPE=hidden name=mode value=insert>
             <TABLE>
-                <TR> <TD>Image to upload : </TD>
-                <TD><input type='file' name='image' required></TD></TR>
+                <TR> 
+                    <TD>Select Type : </TD>
+                    <TD>
+                        <select name = "type">
+                            <option value = "general">General</option>
+                            <option value = "finalProject">Final Project</option>
+                        </select>
+                    </TD>
+                </TR>
                 <TR> <TD>Title : </TD>
                 <TD><input type='text' name='title' required></TD></TR>
                 <TR> <TD>Author : </TD>
                 <TD><input type='text' name='author' required></TD></TR>
+                <TR> <TD>Image to upload : </TD>
+                <TD><input type='file' name='image' required></TD></TR>
                 <TR> <TD>File to upload : </TD>
                 <TD><input type='file' name='file' required></TD></TR>
                 <TR> <TD colspan = 2>

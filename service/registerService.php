@@ -4,19 +4,21 @@
 <?php 
     if(isset($_FILES['image']) && isset($_FILES['file'])){
 
+
+        $type = $_POST['type'];
+        $title = $_POST['title'];
+        $author = $_POST['author'];
+    
         $img_name = $_FILES['image']['name'];
         $img_size = $_FILES['image']['size'];
         $img_tmp_name = $_FILES['image']['tmp_name'];
         $img_error =  $_FILES['image']['error'];
 
-        $title = $_POST['title'];
-        $author = $_POST['author'];
-
-        $registeredDate = date("Y-m-d (H:i)");
-
         $file_name = $_FILES['file']['name'];
         $file_tmp_name = $_FILES['file']['tmp_name'];
         $file_error = $_FILES['file']['error'];
+
+        $registeredDate = date("Y-m-d (H:i)");
 
         if($img_error === 0 && $file_error === 0){
             if($img_size > 125000){
@@ -47,8 +49,15 @@
                         $file_upload_path = '../bookPdf/'.$new_file_name;
                         move_uploaded_file($file_tmp_name, $file_upload_path);
 
-                        $sql = "INSERT INTO book(image, file_orig_name, file_save_name, title, author, registered_date)
-                        VALUES('{$new_img_name}', '{$file_name}', '{$new_file_name}', '{$title}', '{$author}', '{$registeredDate}')";
+                        if($type === 'general'){
+                            $type = 0;
+                        }
+                        else{
+                            $type = 1;
+                        }
+
+                        $sql = "INSERT INTO book(type, image, file_orig_name, file_save_name, title, author, registered_date)
+                        VALUES('{$type}','{$new_img_name}', '{$file_name}', '{$new_file_name}', '{$title}', '{$author}', '{$registeredDate}')";
                         mysqli_query($conn, $sql);
                         echo("
                             <script>
