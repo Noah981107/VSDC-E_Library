@@ -39,6 +39,10 @@
                     $image = $board['image'];
                     echo "<img src = '../bookImage/$image'>";
                     echo "title : ".$board['title']." "."author : ".$board['author']."</br>";
+                    session_start();
+                    $_SESSION["file_orig_name"] = $board['file_orig_name'];
+                    $_SESSION["file_save_name"] = $board['file_save_name'];
+                    echo "<a href = 'downloadService.php'><input type='button' value='download'></a>";
                 }
             }
         ?>

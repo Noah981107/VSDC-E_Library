@@ -9,14 +9,14 @@
         </header>
         <div id="search_box">
             <form action = "/service/searchService.php" method ="get">
-            <select name = "category">
-                <option value = "title">title</option>
-                <option value = "author">author</option>
-            </select>
-            <input type = "text" name = "search" size = "40" required = "required" /> 
-            <button>search</button>
+                <select name = "category">
+                    <option value = "title">title</option>
+                    <option value = "author">author</option>
+                </select>
+                <input type = "text" name = "search" size = "40" required = "required" /> 
+                <button>search</button>
+            </form>
         </div>  
-        </form>
         <footer>
             <?php include "footer.php";?>
         </footer>
