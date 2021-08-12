@@ -11,6 +11,8 @@
               <div class="topnav">
                 <a href="../index.php">Home</a>
                 <a href="../search.php">Search</a>
+                <a href="../search.php">General Book</a>
+                <a href="../search.php">Final Projenct Book</a>
 <?php 
   if(!$userId){
 ?>
@@ -22,7 +24,6 @@
 ?>
                 <a href = "../register.php">Register</a>
                 <a href = "../logOut.php">Log Out</a>
-                <a href = "../myPage.php">My Page</a>
 <?php
   }
 ?>
