@@ -7,13 +7,22 @@
     $search = $_GET['search'];
     switch($category){
         case "unifiedSearch" :
-            $query = "SELECT * FROM book WHERE title OR author LIKE '%$search%' ORDER BY id";
+            $query = "SELECT * FROM book WHERE title OR author LIKE '%$search%' 
+                      OR title = '$search'
+                      OR author = '$search'
+                      ORDER BY id";
             break;
         case "title" :
-            $query = "SELECT * FROM book WHERE title LIKE '%$search%' ORDER BY id";
+            $query = "SELECT * FROM book WHERE title LIKE '%$search%' 
+                      OR title = '%$search%'
+                      OR author = '%$search%'
+                      ORDER BY id";
             break;
         case "author" :
-            $query = "SELECT * FROM book WHERE author LIKE '%$search%' ORDER BY id";
+            $query = "SELECT * FROM book WHERE author LIKE '%$search%' 
+                      OR title = '%$search%'
+                      OR author = '%$search%'
+                      ORDER BY id";
             break;
     }
 ?>
