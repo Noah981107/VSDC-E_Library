@@ -44,6 +44,13 @@
                 <div>
                     <?php echo($row['author']); ?>
                 </div>
+                <div>
+                    <a href = "/service/downloadService.php?orig=
+                                <?php echo($row['file_orig_name']);?>
+                                &save=<?php echo($row['file_save_name']);?>">
+                        <input type ="button" value = "download">
+                    </a>
+                </div>
         <?php            
                 }
 
