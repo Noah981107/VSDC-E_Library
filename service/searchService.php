@@ -20,11 +20,11 @@
         </header>
         <h1><?php echo $search; ?> search results in <?php echo $category; ?></h1>
         <?php
-            $sql = "SELECT * from book where $category like '%$search%' order by id DESC";
-            $sqlResult = mysqli_query($conn, $sql);
+            $query = "SELECT * from book where $category like '%$search%' order by id DESC";
+            $result = mysqli_query($conn, $query);
 
-            $sqlMatch = mysqli_num_rows($sqlResult);
-            if($sqlMatch === 0){
+            $resultNum = mysqli_num_rows($result);
+            if($resultNum === 0){
                 echo ("
                     <script>
                         window.alert('There is nothing you are looking for.')
@@ -33,17 +33,20 @@
                 ");
             }
             else{
-                $board = mysqli_fetch_assoc($sqlResult);
-                for($i=0; $i<$sqlMatch; $i+=1){
-                    $sqlMatch -= 1;
-                    $image = $board['image'];
-                    echo "<img src = '../bookImage/$image'>";
-                    echo "title : ".$board['title']." "."author : ".$board['author']."</br>";
-                    session_start();
-                    $_SESSION["file_orig_name"] = $board['file_orig_name'];
-                    $_SESSION["file_save_name"] = $board['file_save_name'];
-                    echo "<a href = 'downloadService.php'><input type='button' value='download'></a>";
+                while($row = mysqli_fetch_array($result)){
+        ?>
+                <div>
+                    <img width = "100" height = "145" src = "../bookImage/<?php echo($row['image']); ?>">
+                </div>
+                <div>
+                    <?php echo($row['title']); ?>
+                </div>
+                <div>
+                    <?php echo($row['author']); ?>
+                </div>
+        <?php            
                 }
+
             }
         ?>
         <div id="search_box">
