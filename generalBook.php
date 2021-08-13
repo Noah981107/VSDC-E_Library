@@ -41,13 +41,29 @@
                     $result = mysqli_query($conn, $query); 
 
                     while ($row = mysqli_fetch_array($result)) {
-                        echo($row['id']. ' '); 
-                        echo "<img src = '../bookImage/{$row['image']}'>";
-                        echo($row['title'] .' ' . $row['author'].' ');
-                        echo "<a href = '/service/downloadService.php?orig={$row['file_orig_name']}&save={$row['file_save_name']}'><input type='button' value='download'></a>"."</br>"; 
+            ?>
+                        <div>
+                            <img width = "100" height = "145" src = "../bookImage/<?php echo($row['image']); ?>">
+                        </div>
+                        <div>
+                            <?php echo($row['title']); ?>
+                        </div>
+                        <div>
+                            <?php echo($row['author']); ?>
+                        </div>
+                        <div>
+                            <a href = "/service/downloadService.php?orig=
+                                        <?php echo($row['file_orig_name']);?>
+                                        &save=<?php echo($row['file_save_name']);?>">
+                                <input type ="button" value = "download">
+                            </a>
+                        </div>
+            <?php 
                     }  
                     for($page = 1; $page<= $number_of_page; $page++) {  
-                        echo '<a href = "generalBook.php?page=' . $page . '">' . $page . ' </a>';  
+            ?>
+                        <a href = "generalBook.php?page=<?php echo($page);?>"><?php echo($page);?></a>
+            <?php  
                     }  
                 }
             ?>  
