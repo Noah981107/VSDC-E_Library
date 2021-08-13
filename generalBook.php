@@ -12,6 +12,9 @@
             <?php include "header.php"; ?>
         </header>
         <div>
+            <?php include "search.php"; ?>
+        </div>
+        <div>
             <?php 
                 $results_per_page = 10;
 
@@ -30,7 +33,7 @@
                     $number_of_page = ceil ($sqlMatch / $results_per_page);
 
                     if (!isset ($_GET['page']) ) {  
-                        $page = 1;  
+                        $page = 1;    
                     } else {  
                         $page = $_GET['page'];  
                     }  

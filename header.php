@@ -10,7 +10,6 @@
 ?>
               <div class="topnav">
                 <a href="../index.php">Home</a>
-                <a href="../search.php">Search</a>
                 <a href="../generalBook.php">General Book</a>
                 <a href="../finalProjectBook.php">Final Projenct Book</a>
 <?php 

@@ -4,9 +4,6 @@
         <meta charset ="utf-8" content = "text/html">
     </head>
     <body>
-        <header>
-            <?php include "header.php";?>
-        </header>
         <div id="search_box">
             <form action = "/service/searchService.php" method ="get">
                 <select name = "category">
@@ -17,9 +14,6 @@
                 <button>search</button>
             </form>
         </div>  
-        <footer>
-            <?php include "footer.php";?>
-        </footer>
     </body>
 
 </html>

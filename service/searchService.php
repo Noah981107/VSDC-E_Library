@@ -28,7 +28,7 @@
                 echo ("
                     <script>
                         window.alert('There is nothing you are looking for.')
-                        location.href = '../search.php'
+                        location.href = '../index.php'
                     </script>
                 ");
             }
