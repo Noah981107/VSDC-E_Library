@@ -6,7 +6,7 @@
     </head>
     <body>
       <?php 
-        include "search.php";
+        include "mainSearch.php";
       ?>
     </body>
 </html>
