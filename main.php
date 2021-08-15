@@ -2,11 +2,11 @@
 <html>
     <head>
         <meta charset="utf-8" content="text/html">
-        <link rel="stylesheet" type="text/css" href="./css/main.css">
     </head>
     <body>
       <?php 
-        include "mainSearch.php";
+        $type = 2;
+        include "search.php";
       ?>
     </body>
 </html>
