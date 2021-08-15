@@ -14,14 +14,12 @@
             break;
         case "title" :
             $query = "SELECT * FROM book WHERE title LIKE '%$search%' 
-                      OR title = '%$search%'
-                      OR author = '%$search%'
+                      OR title = '$search'
                       ORDER BY id";
             break;
         case "author" :
             $query = "SELECT * FROM book WHERE author LIKE '%$search%' 
-                      OR title = '%$search%'
-                      OR author = '%$search%'
+                      OR author = '$search'
                       ORDER BY id";
             break;
     }

@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="./css/logIn.css">
+
 <!Doctype html>
 <html>
     <head>
@@ -7,10 +9,18 @@
       <header>
         <?php include "header.php";?>
       </header>
-      <form action="/service/logInService.php" method="POST">
-        <p>Id : <input type="text" name="id" placeholder="id" required></p>
-        <p>Password : <input type="password" name="password" placeholder="password" required></p>
-        <p><input type="submit" value="submit"></p>
+      <div class="logInForm">
+        <h1>Log in</h1>
+        <form action="/service/logInService.php" method="POST">
+        <h3>Id</h3>
+        <input type="text" name="id" placeholder="example" required>
+        <h3>Password</h3>
+        <input type="password" name="password" placeholder="********" required>
+        <div></div>
+        <input id="submit" type="submit" value="Log in">
+        </form>
+      </div>
+
       </form>
       <footer>
             <?php include "footer.php";?>

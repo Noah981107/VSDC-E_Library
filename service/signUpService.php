@@ -6,11 +6,8 @@
     $id = $_POST['id'];
     $password = $_POST['password'];
     $name = $_POST['name'];
-    $email1 = $_POST['email1'];
-    $email2 = $_POST['email2'];
+    $email = $_POST['email'];
     $password = password_hash($password, PASSWORD_BCRYPT);
-
-    $email = $email1."@".$email2;
     $registeredDate = date("Y-m-d (H:i)");
     
     //id 중복 검사
@@ -39,7 +36,7 @@
             ");
         }
         else {
-            $sql = "INSERT INTO e_library.user(id, password, name, email, registered_date) 
+            $sql = "INSERT INTO user(id, password, name, email, registered_date) 
             VALUES('{$id}', '{$password}', '{$name}', '{$email}', '{$registeredDate}')";
             mysqli_query($conn, $sql);
             mysqli_close($conn);

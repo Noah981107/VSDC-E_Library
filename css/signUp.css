@@ -1,0 +1,38 @@
+.signUpForm {
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+input {
+    width: 300px;
+    height: 50px;
+    border: 3px solid rgba(1, 1, 1, 0.5);
+    border-radius: 5px;
+    padding-left: 15px;
+}
+
+input::placeholder {
+    font-weight: 600;
+    font-size: 16px;
+}
+
+input:focus {
+    border-color: salmon;
+    outline: none;
+}
+
+#submit {
+    margin-top: 30px;
+    border: none;
+    background-color: salmon;
+    font-size: 26px;
+    font-weight: 500;
+    color: white;
+}
+
+#submit::-ms-value {
+    font-size: 100px;
+}
