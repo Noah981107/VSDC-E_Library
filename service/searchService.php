@@ -42,7 +42,7 @@
     </head>
     <body>
         <?php include "../sideBar.php"?>
-        <div class = "main">
+        <section class="home-section">
             <header>
                 <div><?php include "../header.php";?></div>
                 <div><?php include "../search.php";?></div>
@@ -106,6 +106,6 @@
             <footer>
                 <?php include "../footer.php";?>
             </footer>
-        </div>
+        </section>
     </body>
 </html>

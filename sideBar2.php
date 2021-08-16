@@ -25,14 +25,14 @@
             <span class="tooltip">Search</span>
         </li>
         <li>
-            <a href="../generalBook.php">
+            <a href="generalBook.php">
                 <i class='bx bx-book' ></i>
                 <span class="links_name">General Book</span>
             </a>
             <span class="tooltip">General Book</span>
         </li>
         <li>
-            <a href="../finalProjectBook.php">
+            <a href="finalProjectBook.php">
                 <i class='bx bxs-book-bookmark' ></i>
                 <span class="links_name">Final Project Book</span>
             </a>
@@ -42,14 +42,14 @@
         if(!$userId){
 ?>
             <li>
-                <a href="../logIn.php">
+                <a href="logIn.php">
                     <i class='bx bx-log-in' ></i>   
                     <span class="links_name">Log in</span>
                 </a>
                 <span class="tooltip">Login</span>
             </li>
             <li>
-                <a href="../signUp.php">
+                <a href="signUp.php">
                     <i class='bx bx-user-plus' ></i>
                     <span class="links_name">Sign in</span>
                 </a>
@@ -59,19 +59,19 @@
         }
         else{
 ?>
-           <li>
-                <a href="../register.php">
-                    <i class='bx bx-cloud-upload' ></i>
-                    <span class="links_name">Upload Book</span>
-                </a>
-                <span class="tooltip">Upload Book</span>
-            </li>
             <li>
                 <a href="#">
                     <i class='bx bx-cog' ></i>
                     <span class="links_name">Setting</span>
                 </a>
                 <span class="tooltip">Setting</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bx-cloud-upload' ></i>
+                    <span class="links_name">Upload Book</span>
+                </a>
+                <span class="tooltip">Upload Book</span>
             </li>
 <?php
         }

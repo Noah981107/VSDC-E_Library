@@ -25,7 +25,7 @@ input {
 
 select {
     text-align-last: center;
-    color: salmon;
+    color: #1d1b31;
     font-size: 22px;
     font-weight: 600;
     outline: none;
@@ -41,5 +41,5 @@ button {
     padding: 0px;
     border: none;
     background-color: white;
-    color: salmon;
+    color: #1d1b31;
 }
