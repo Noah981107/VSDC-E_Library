@@ -2,6 +2,14 @@
     include "db.php";
 ?>
 
+<?php 
+    session_start();
+    if(isset($_SESSION["userId"])) $userId = $_SESSION["userId"];
+    else $userId = "";
+    if(isset($_SESSION["userName"])) $userName = $_SESSION["userName"];
+    else $userName = "";
+?>
+
 <!Doctype html>
 <html>
     <head>
@@ -26,7 +34,11 @@
 <?php 
     $results_per_page = 10;
 
-    $sql = "SELECT * FROM book WHERE type = 0";
+    $sql = "SELECT b.id, b.image, b.title, b.author, b.description, b.registered_date
+    FROM book as b
+    LEFT JOIN user as u
+    ON b.writer = u.idx
+    WHERE u.id = '$userId'";
     $sqlResult = mysqli_query($conn, $sql);
     $sqlMatch = mysqli_num_rows($sqlResult);
     if($sqlMatch === 0){
@@ -45,7 +57,7 @@
 
         $page_first_result = ($page-1) * $results_per_page; 
 
-        $query = "SELECT * FROM book WHERE type = 0 LIMIT " . $page_first_result . ',' . $results_per_page;
+        $query = $sql. " LIMIT " . $page_first_result . ',' . $results_per_page;
         $result = mysqli_query($conn, $query); 
 
         while ($row = mysqli_fetch_array($result)) {
@@ -55,19 +67,27 @@
                             <img width = "100" height = "150" src = "../bookImage/<?php echo($row['image']); ?>">
                             <div>
                                 <div class="book-title">
-                                    <?php echo($row['title']); ?>
+                                    Title : <?php echo($row['title']); ?>
                                 </div>
                                 <div class="book-author">
-                                    <?php echo($row['author']); ?>  
+                                    Author : <?php echo($row['author']); ?>  
                                 </div>
                                 <div class="book-date">
-                                    <?php echo($row['registered_date']); ?>
+                                    Description : <?php echo($row['description']); ?>
+                                </div>
+                                <div class="book-date">
+                                    Resgistered Date : <?php echo($row['registered_date']); ?>
                                 </div>
                             </div>
                         </div>
+                        <div class="download"> <!-- 여기 추가함-->
+                            <a href = "/service/bookModifyService.php?id=<?php echo($row['id']); ?>">
+                                <i class='bx bxs-pencil'></i>
+                            </a>
+                        </div>
                         <div class="download">
-                            <a href = "/service/downloadService.php?orig=<?php echo($row['file_orig_name']);?>&save=<?php echo($row['file_save_name']);?>">
-                                <i class='bx bx-download download-icon'></i>
+                            <a href = "/service/bookDeleteService.php?id=<?php echo($row['id']); ?>">
+                                <i class='bx bx-eraser'></i>
                             </a>
                         </div>
                     </div>   <!--여기가 bood div 닫히는곳-->
