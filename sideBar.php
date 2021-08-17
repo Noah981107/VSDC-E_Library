@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/sidebar2.css">
+<link rel="stylesheet" href="/css/sidebar2.css?after">
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -25,6 +25,13 @@
             <span class="tooltip">Search</span>
         </li>
         <li>
+            <a href="../index.php">
+                <i class='bx bx-home'></i>
+                <span class="links_name">Home</span>
+            </a>
+            <span class="tooltip">Home</span>
+        </li>
+        <li>
             <a href="../generalBook.php">
                 <i class='bx bx-book' ></i>
                 <span class="links_name">General Book</span>
@@ -46,21 +53,21 @@
                     <i class='bx bx-log-in' ></i>   
                     <span class="links_name">Log in</span>
                 </a>
-                <span class="tooltip">Login</span>
+                <span class="tooltip">Log in</span>
             </li>
             <li>
                 <a href="../signUp.php">
                     <i class='bx bx-user-plus' ></i>
-                    <span class="links_name">Sign in</span>
+                    <span class="links_name">Sign up</span>
                 </a>
-                <span class="tooltip">Sign in</span>
+                <span class="tooltip">Sign up</span>
             </li>
 <?php
         }
         else{
 ?>
            <li>
-                <a href="../register.php">
+                <a href="../upload.php">
                     <i class='bx bx-cloud-upload' ></i>
                     <span class="links_name">Upload Book</span>
                 </a>
@@ -73,14 +80,10 @@
                 </a>
                 <span class="tooltip">Setting</span>
             </li>
-<?php
-        }
-?>
-        <li class="profile">
+            <li class="profile">
             <div class="profile-details">
-                <img src="profile.jpg" alt="profileImg">
                 <div class="name_job">
-                    <div class="name"></div>
+                    <div class="name"><?php echo($userName)?></div>
                     <div class="job">Professor</div>
                 </div>
             </div>
@@ -89,6 +92,10 @@
                 <span class="links_name">Log out</span>
             </a>
         </li>
+<?php
+        }
+?>
+        
     </ul>
 </div>
 <script>

@@ -1,45 +1,46 @@
 #content {
-    display: flex;
-    justify-content: space-between;
-    border: 5px solid salmon;
-    margin: 30px;
-    width: 800px;
-    height: 70px;
+  display: flex;
+  justify-content: space-between;
+  border: 5px solid #11101d;
+  margin: 30px;
+  width: 800px;
+  height: 70px;
 }
 
 .wrapper {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 80px;
 }
 
 input {
-    font-size: 22px;
-    font-weight: 600;
-    margin: 0px;
-    padding: 0px;
-    width: 75%;
-    border: none;
-    outline: none;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0px;
+  padding: 0px;
+  width: 75%;
+  border: none;
+  outline: none;
 }
 
 select {
-    text-align-last: center;
-    color: #1d1b31;
-    font-size: 22px;
-    font-weight: 600;
-    outline: none;
-    width: 15%;
-    margin: 0px;
-    padding: 0px;
-    border: none;
+  text-align-last: center;
+  color: #1d1b31;
+  font-size: 22px;
+  font-weight: 600;
+  outline: none;
+  width: 15%;
+  margin: 0px;
+  padding: 0px;
+  border: none;
 }
 
 button {
-    width: 10%;
-    margin: 0px;
-    padding: 0px;
-    border: none;
-    background-color: white;
-    color: #1d1b31;
+  width: 10%;
+  margin: 0px;
+  padding: 0px;
+  border: none;
+  background-color: white;
+  color: #1d1b31;
 }

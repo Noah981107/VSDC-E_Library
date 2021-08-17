@@ -29,6 +29,7 @@
 
     <head>
         <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="../css/home-section.css?after">
         <title>VSDC E-Library</title>
     </head>
     

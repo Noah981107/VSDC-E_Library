@@ -1,3 +1,4 @@
-<link rel="stylesheet" type="text/css" href="./css/header.css">
+ 
+    <link rel="stylesheet" type="text/css" href="../css/header.css?after">
 
-<h1 id = "test">VSDC E-Library</h1>
+    <h1 class="title">VSDC E-Library</h1>  

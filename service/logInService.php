@@ -12,7 +12,6 @@
     if($num_match <= 0){
         echo("
             <script>
-                window.alert('This ID is not registered!')
                 history.go(-1)
             </script>
         ");
@@ -26,7 +25,6 @@
             $_SESSION["userName"] = $row["name"];
             echo("
                 <script>
-                    window.alert('Log In Success')
                     location.href = '../index.php';
                 </script>
             ");
@@ -34,7 +32,6 @@
         else{
             echo("
                 <script>
-                    window.alert('Your password is wrong!')
                     history.go(-1)
                 </script>
             ");

@@ -1,6 +1,6 @@
 <head>
     <script src="https://kit.fontawesome.com/4c0b35c1e5.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" type="text/css" href="../css/search.css">
+    <link rel="stylesheet" type="text/css" href="../css/search.css?after">
 </head>
 
 

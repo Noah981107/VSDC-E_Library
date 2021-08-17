@@ -42,9 +42,8 @@
             mysqli_close($conn);
             echo ("
                 <script>
-                    window.alert('MemberShip Success!')
-                    location.href = '../index.php'
-                </script>
+                    location.href = '../logIn.php'
+                </script>s
             ");
         }
     }
