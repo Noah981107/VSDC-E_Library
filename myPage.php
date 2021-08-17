@@ -16,6 +16,24 @@
         <meta charset ="utf-8" content = "text/html">
         <link rel="stylesheet" type="text/css" href="../css/home-section.css?after">
         <link rel="stylesheet" type="text/css" href="../css/generalBook.css?after">
+        <script type="text/javascript">
+            function userDeleteCheck(){
+                if(confirm("Are you sure you want to leave?")){
+                    location.href = "/service/withdrawService.php";
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            function bookDeleteCheck(){
+                if(confirm("Are you sure you want to delete it?")){
+                    location.href = "/service/bookDeleteService.php?id=<?php echo($row['id']); ?>";
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        </script>
     </head>
     <body>
         <?php include "sideBar.php";?>
@@ -29,7 +47,7 @@
     //include "search.php"; 
 ?>
                 <div class="book-wrapper">
-                    <a href = "/service/withdrawService.php"><i class='bx bxs-door-open'></i></a> <!--여기 추가함 (회원탈퇴 아이콘)-->
+                    <a href = "#" onclick = "userDeleteCheck();"><i class='bx bxs-door-open'></i></a><!-- 여기 추가함 (회원탈퇴 아이콘)-->
                 
 <?php 
     $results_per_page = 10;
@@ -86,7 +104,7 @@
                             </a>
                         </div>
                         <div class="download">
-                            <a href = "/service/bookDeleteService.php?id=<?php echo($row['id']); ?>">
+                            <a href = "#" onclick = "bookDeleteCheck();">
                                 <i class='bx bx-eraser'></i>
                             </a>
                         </div>
