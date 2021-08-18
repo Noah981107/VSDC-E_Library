@@ -7,7 +7,7 @@
         $type = $_POST['type'];
         $title = $_POST['title'];
         $author = $_POST['author'];
-        $userId = $_POST['userId'];
+        $bookId = $_POST['bookId'];
 
         if($_POST['description'] === null || $_POST['description'] === ""){
             $description = "No Description...";
@@ -15,7 +15,7 @@
         else{
             $description = $_POST['description'];
         }
-    
+
         $img_name = $_FILES['image']['name'];
         $img_size = $_FILES['image']['size'];
         $img_tmp_name = $_FILES['image']['tmp_name'];
@@ -26,8 +26,6 @@
         $file_error = $_FILES['file']['error'];
 
         $registeredDate = date("Y-m-d (H:i)");
-
-        print_r($_FILES['file']);
 
         if($img_error === 0 && $file_error === 0){
             if($img_size > 125000){
@@ -64,20 +62,18 @@
                         else{
                             $type = 1;
                         }
-
-                        $query = "SELECT idx FROM user WHERE id = '$userId'";
-                        $result = mysqli_query($conn, $query);
-                        $user = mysqli_fetch_array($result);
-                        $idx = $user['idx'];
                         
-
-                        $sql = "INSERT INTO book(type, image, file_orig_name, file_save_name, title, author, description, writer, registered_date)
-                        VALUES('{$type}','{$new_img_name}', '{$file_name}', '{$new_file_name}', '{$title}', '{$author}', '{$description}','{$idx}', '{$registeredDate}')";
+                        $sql = "UPDATE book
+                                SET type='$type', image='$new_img_name'
+                                        ,file_orig_name='$file_name', file_save_name='$new_file_name'
+                                        ,title='$title', author='$author'
+                                        ,description='$description', registered_date='$registeredDate'
+                                WHERE id = '$bookId'";
                         mysqli_query($conn, $sql);
                         echo("
                             <script>
-                                window.alert('Register Success!')
-                                location.href = '../index.php'
+                                window.alert('Modify Success!')
+                                history.go(-2)
                             </script>
                         ");
                     }

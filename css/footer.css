@@ -1,5 +1,9 @@
-#footer_content {
-    margin: 0 auto;
-    color: #333;
-    text-align: center;
+.footer {
+    background-color: #0a1435;
+    width: 100%;
+    height: 300px;
+}
+
+.footer-content {
+    color: rgba(255, 255, 255, 0.7);
 }

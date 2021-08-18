@@ -20,6 +20,7 @@
     $type = 0;
     include "search.php"; 
 ?>
+                <div class="line"></div>
                 <div class="book-wrapper">
                 
 <?php 
@@ -56,11 +57,16 @@
                                 <div class="book-title">
                                     <?php echo($row['title']); ?>
                                 </div>
-                                <div class="book-author">
-                                    <?php echo($row['author']); ?>  
+                                <div class="book-authordate">
+                                    <div class="book-author">
+                                        <?php echo($row['author']); ?>  
+                                    </div>
+                                    <div class="book-date">
+                                        <?php echo($row['registered_date']); ?>
+                                    </div>
                                 </div>
-                                <div class="book-date">
-                                    <?php echo($row['registered_date']); ?>
+                                <div class="book-description">
+                                    <?php echo($row['description']); ?>
                                 </div>
                             </div>
                         </div>
@@ -88,10 +94,10 @@
 <?php
     }
 ?>  
-                <footer>
-                    <?php include "footer.php";?>
-                </footer>
             </div>
+            <footer>
+                <?php include "footer.php";?>
+            </footer>
         </section>
     </body>
 </html>

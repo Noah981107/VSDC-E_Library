@@ -47,7 +47,9 @@
                 <header>
                     <?php include "../header.php";?>
                 </header>
+                
 <?php include "../search.php";?>
+                <div class="line"></div>
 <?php 
     $result = mysqli_query($conn, $query2);
     $resultNum = mysqli_num_rows($result);
@@ -82,18 +84,23 @@
 <?php
         while($row = mysqli_fetch_array($result2)){
 ?>
-                    <div class="book">  
+                     <div class="book">  
                         <div class="book-info">
                             <img width = "100" height = "150" src = "../bookImage/<?php echo($row['image']); ?>">
                             <div>
                                 <div class="book-title">
                                     <?php echo($row['title']); ?>
                                 </div>
-                                <div class="book-author">
-                                    <?php echo($row['author']); ?>  
+                                <div class="book-authordate">
+                                    <div class="book-author">
+                                        <?php echo($row['author']); ?>  
+                                    </div>
+                                    <div class="book-date">
+                                        <?php echo($row['registered_date']); ?>
+                                    </div>
                                 </div>
-                                <div class="book-date">
-                                    <?php echo($row['registered_date']); ?>
+                                <div class="book-description">
+                                    <?php echo($row['description']); ?>
                                 </div>
                             </div>
                         </div>
@@ -119,10 +126,10 @@
 <?php
     }
 ?>
-                <footer>
-                    <?php include "../footer.php";?>
-                </footer>
             </div> <!--div.text-->
+            <footer>
+                <?php include "../footer.php";?>
+            </footer>
         </section>
     </body>
 </html>

@@ -74,11 +74,18 @@
                 <span class="tooltip">Upload Book</span>
             </li>
             <li>
-                <a href="../myPage.php">
-                    <i class='bx bxs-user-rectangle'></i>
-                    <span class="links_name">My Page</span>
+                <a href="../myBook.php">
+                    <i class='bx bx-book-heart'></i>
+                    <span class="links_name">My Book</span>
                 </a>
-                <span class="tooltip">My Page</span>
+                <span class="tooltip">My Book</span>
+            </li>
+            <li>
+                <a href="../myBook.php">
+                    <i class='bx bxs-user-account' ></i>
+                    <span class="links_name">My Account</span>
+                </a>
+                <span class="tooltip">My Account</span>
             </li>
             <li class="profile">
             <div class="profile-details">

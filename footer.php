@@ -1,5 +1,5 @@
-<link rel="stylesheet" type="text/css" href="./css/footer.css">
+<link rel="stylesheet" type="text/css" href="/css/footer.css?after">
 
-<div id="footer_content">
-    <p>Gloducation | 2021.08.09</p>
+<div class="footer">
+    <p class="footer-content">Gloducation | 2021.08.09</p>
 </div>

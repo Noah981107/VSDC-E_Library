@@ -16,15 +16,9 @@
         <meta charset ="utf-8" content = "text/html">
         <link rel="stylesheet" type="text/css" href="../css/home-section.css?after">
         <link rel="stylesheet" type="text/css" href="../css/generalBook.css?after">
+        <link rel="stylesheet" type="text/css" href="../css/myBook.css?after">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css" integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
         <script type="text/javascript">
-            function userDeleteCheck(){
-                if(confirm("Are you sure you want to leave?")){
-                    location.href = "/service/withdrawService.php";
-                    return true;
-                } else {
-                    return false;
-                }
-            }
             function bookDeleteCheck(){
                 if(confirm("Are you sure you want to delete it?")){
                     location.href = "/service/bookDeleteService.php?id=<?php echo($row['id']); ?>";
@@ -42,13 +36,9 @@
                 <header>
                     <?php include "header.php"; ?>
                 </header>
-<?php
-    //$type = 0;
-    //include "search.php"; 
-?>
+                <div class="line"></div>
                 <div class="book-wrapper">
-                    <a href = "#" onclick = "userDeleteCheck();"><i class='bx bxs-door-open'></i></a><!-- 여기 추가함 (회원탈퇴 아이콘)-->
-                
+                                   
 <?php 
     $results_per_page = 10;
 
@@ -60,6 +50,9 @@
     $sqlResult = mysqli_query($conn, $sql);
     $sqlMatch = mysqli_num_rows($sqlResult);
     if($sqlMatch === 0){
+?>
+                </div>
+<?php
         echo ("
             This page is empty
         ");
@@ -80,32 +73,41 @@
 
         while ($row = mysqli_fetch_array($result)) {
 ?>
-                    <div class="book">  
+                     <div class="book">  
                         <div class="book-info">
                             <img width = "100" height = "150" src = "../bookImage/<?php echo($row['image']); ?>">
                             <div>
                                 <div class="book-title">
-                                    Title : <?php echo($row['title']); ?>
+                                    <?php echo($row['title']); ?>
                                 </div>
-                                <div class="book-author">
-                                    Author : <?php echo($row['author']); ?>  
+                                <div class="book-authordate">
+                                    <div class="book-author">
+                                        <?php echo($row['author']); ?>  
+                                    </div>
+                                    <div class="book-date">
+                                        <?php echo($row['registered_date']); ?>
+                                    </div>
                                 </div>
-                                <div class="book-date">
-                                    Description : <?php echo($row['description']); ?>
-                                </div>
-                                <div class="book-date">
-                                    Resgistered Date : <?php echo($row['registered_date']); ?>
+                                <div class="book-description">
+                                    <?php echo($row['description']); ?>
                                 </div>
                             </div>
                         </div>
-                        <div class="download"> <!-- 여기 추가함-->
-                            <a href = "/service/bookModifyService.php?id=<?php echo($row['id']); ?>">
-                                <i class='bx bxs-pencil'></i>
+                        
+                        <div class="download">
+                        
+                            <a href = "modifyBook.php?title=<?php echo($row['title']); ?>
+                                       &author=<?php echo($row['author']); ?>
+                                       &description=<?php echo($row['description']); ?>
+                                       &registeredDate=<?php echo($row['registered_date']);?>
+                                       &bookId=<?php echo($row['id']); ?>
+                                       ">
+                            <i class="fas fa-wrench update-icon"></i>
                             </a>
                         </div>
                         <div class="download">
-                            <a href = "#" onclick = "bookDeleteCheck();">
-                                <i class='bx bx-eraser'></i>
+                            <a href = "/service/deleteBookService.php?id=<?php echo($row['id']); ?>">
+                            <i class="fas fa-trash-alt delete-icon"></i>
                             </a>
                         </div>
                     </div>   <!--여기가 bood div 닫히는곳-->
@@ -127,10 +129,11 @@
 <?php
     }
 ?>  
-                <footer>
-                    <?php include "footer.php";?>
-                </footer>
+                
             </div>
+            <footer>
+                <?php include "footer.php";?>
+            </footer>
         </section>
     </body>
 </html>

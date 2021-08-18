@@ -23,10 +23,10 @@
               <input id="submit" type="submit" value="Log in">
             </form>
           </div>
-          <footer>
-                <?php include "footer.php";?>
-          </footer>
         </div>
+        <footer>
+              <?php include "footer.php";?>
+        </footer>
       </section>
     </body>
 </html>

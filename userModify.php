@@ -1,3 +1,11 @@
+<?php 
+    session_start();
+    if(isset($_SESSION["userId"])) $userId = $_SESSION["userId"];
+    else $userId = "";
+    if(isset($_SESSION["userName"])) $userName = $_SESSION["userName"];
+    else $userName = "";
+?>
+
 <!Doctype html>
 <html>
     <head>
@@ -13,24 +21,22 @@
             <?php include "header.php"; ?>
           </header>
           <div class="signUpForm">
-            <h1>Sign up</h1>
-            <form action="/service/signUpService.php" method="POST">
-              <h3>Id</h3>
-              <input type="text" name="id" placeholder="example" required>
+            <h1>Information modification</h1></br>
+            <form action="/service/userModifyService.php" method="POST">
+              <h3>Id : <?php echo($userId); ?></h3>
               <h3>Password</h3>
               <input type="password" name="password" placeholder="********" required>
-              <h3>Name</h3>
-              <input type="text" name="name" placeholder="example" required>
+              <h3>Name : <?php echo($userName); ?></h3>
               <h3>E-mail</h3>
               <input type="text" name="email" placeholder="example@e_library.com" required>
               <div></div>
-              <input id="submit" type="submit" value="Sign up">
+              <input id="submit" type="submit" value="Change">
             </form>
           </div>
-        </div>
-        <footer>
+          <footer>
             <?php include "footer.php";?>
           </footer>
+        </div>
       </section>
     </body>
 </html>

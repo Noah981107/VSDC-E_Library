@@ -8,7 +8,10 @@
     if(isset($_SESSION["userName"])) $userName = $_SESSION["userName"];
     else $userName = "";
 
-    $sql = "DELETE FROM user WHERE id = '$userId'";
+    $sql = "DELETE FROM user, book
+            USING user as u, book as b
+            WHERE u.idx  = b.writer
+            AND u.id = '$userId'";
     mysqli_query($conn, $sql);
     mysqli_close($conn);
     

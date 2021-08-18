@@ -1,9 +1,10 @@
 .home-section .text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: #11101d;
-  font-size: 25px;
-  font-weight: 500;
-  padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #11101d;
+    font-size: 25px;
+    font-weight: 500;
+    padding-top: 20px;
+    min-height: 80vh;
 }

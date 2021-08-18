@@ -1,3 +1,12 @@
+<?php 
+    $title = $_GET['title'];
+    $author = $_GET['author'];
+    $description = $_GET['description'];
+    $registeredDate = $_GET['registeredDate'];
+    $bookId = $_GET['bookId'];
+?>
+
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -27,18 +36,18 @@
                     <?php include "header.php";?>
                 </header>
                 <div class="uploadForm">
-                    <form action ="/service/uploadService.php" method="POST" enctype='multipart/form-data'>
+                    <form action ="/service/modifyBookService.php" method="POST" enctype='multipart/form-data'>
                         <h5>Type</h5>
                         <select name = "type">
                             <option value = "general">General</option>
                             <option value = "finalProject">Final Project</option>
                         </select>
                         <h5>Title</h5>
-                        <input type='text' name='title' required>
+                        <input type='text' name='title' value=<?php echo($title); ?> required>
                         <h5>Author</h5>
-                        <input type='text' name='author' required>
+                        <input type='text' name='author' value=<?php echo($author); ?> required>
                         <h5>Description</h5>
-                        <textarea name="description" cols="30" rows="10" maxlength="80"></textarea>
+                        <textarea name="description" cols="30" rows="10" maxlength="80"> <?php echo($description); ?> </textarea>
                         
                         <h5>Image</h5>
                         <div class="filebox"> 
@@ -53,12 +62,15 @@
                             <label for="file">browse</label> 
                             <input type="file" id="file" name="file" class="upload-hidden" required> 
                         </div>
-                        <input type = "hidden" name = "userId" value = <?php echo($userId); ?> /> 
+
+                        <input type = "hidden" name = "bookId" value = <?php echo($bookId); ?> /> 
+
                         <div></div>
-                        <input type='submit' id="submit" value='Register Book Information'>
+                        <input type='submit' id="submit" value='Modify Book Information'>
                         </TABLE>
                     </form>
                 </div>
+                
             </div>
             <footer>
                 <?php include "footer.php";?>
