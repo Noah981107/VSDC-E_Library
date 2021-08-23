@@ -7,7 +7,11 @@
     $password = $_POST['password'];
     $name = $_POST['name'];
     $email = $_POST['email'];
+    $code = $_POST['code'];
+
     $password = password_hash($password, PASSWORD_BCRYPT);
+    $code = strtolower($code);
+
     $registeredDate = date("Y-m-d (H:i)");
     
     //id 중복 검사
@@ -17,7 +21,7 @@
     if($idMatch >= 1){
         echo("
             <script>
-                window.alert('ID is duplicated')
+                window.alert('User ID is duplicated')
                 history.go(-1)
             </script>
         ");
@@ -35,16 +39,26 @@
                 </script>
             ");
         }
-        else {
-            $sql = "INSERT INTO user(id, password, name, email, registered_date) 
-            VALUES('{$id}', '{$password}', '{$name}', '{$email}', '{$registeredDate}')";
-            mysqli_query($conn, $sql);
-            mysqli_close($conn);
-            echo ("
-                <script>
-                    location.href = '../logIn.php'
-                </script>s
-            ");
+	else {
+	    if($code === "vsdc"){
+            	$sql = "INSERT INTO user(id, password, name, email, registered_date) 
+            	VALUES('{$id}', '{$password}', '{$name}', '{$email}', '{$registeredDate}')";
+            	mysqli_query($conn, $sql);
+            	mysqli_close($conn);
+            	echo ("
+                	<script>
+                    		location.href = '../logIn.php'
+                	</script>s
+		");
+	    }
+	    else{
+	    	echo("
+                	<script>
+                    		window.alert('Wrong SignUp Code!')
+                    		history.go(-1)
+                	</script>
+                ");
+	    }
         }
     }
 ?>

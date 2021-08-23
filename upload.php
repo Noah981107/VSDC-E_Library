@@ -43,14 +43,14 @@
                         <h5>Image</h5>
                         <div class="filebox"> 
                             <input class="upload-name" value="select image" disabled="disabled"> 
-                            <label for="image">browse</label> 
+                            <label for="image">Search</label> 
                             <input type="file" id="image" name="image" class="upload-hidden" required> 
                         </div>
 
                         <h5>File</h5>
                         <div class="filebox"> 
                             <input class="upload-name" value="select file" disabled="disabled"> 
-                            <label for="file">browse</label> 
+                            <label for="file">Search</label> 
                             <input type="file" id="file" name="file" class="upload-hidden" required> 
                         </div>
                         <input type = "hidden" name = "userId" value = <?php echo($userId); ?> /> 

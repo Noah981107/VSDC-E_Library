@@ -27,10 +27,8 @@
 
         $registeredDate = date("Y-m-d (H:i)");
 
-        print_r($_FILES['file']);
-
         if($img_error === 0 && $file_error === 0){
-            if($img_size > 125000){
+            if($img_size > 52428800){
                 echo("
                 <script>
                     window.alert('Sorry, Your image file is too large');
@@ -72,7 +70,8 @@
                         
 
                         $sql = "INSERT INTO book(type, image, file_orig_name, file_save_name, title, author, description, writer, registered_date)
-                        VALUES('{$type}','{$new_img_name}', '{$file_name}', '{$new_file_name}', '{$title}', '{$author}', '{$description}','{$idx}', '{$registeredDate}')";
+			VALUES('{$type}','{$new_img_name}', '{$file_name}', '{$new_file_name}', '{$title}', '{$author}', '{$description}','{$idx}', '{$registeredDate}')";
+			$sql = addslashes($sql);
                         mysqli_query($conn, $sql);
                         echo("
                             <script>
@@ -100,13 +99,15 @@
                 }
             }
         }
-        else {
-            echo("
+	else {
+		echo($img_error);
+		echo($file_error);
+           echo("
             <script>
                 window.alert('Sorry, Unkown error occurred!');
                 history.go(-1)
             </script>
-            ");            
+	    ");         
         }
     }
     else {

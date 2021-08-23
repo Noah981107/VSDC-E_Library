@@ -1,5 +1,55 @@
-#main {
-    width: 500px;
-    height: 800px;
-    background-color: pink;
+.recommend-general,
+.recommend-project {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.recommend-general a img,
+.recommend-project a img {
+  border: 1px solid #11101d;
+  border-radius: 3px;
+}
+
+.recommend-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding-right: 60px;
+  padding-left: 60px;
+  padding-top: 0px;
+}
+
+.recommend-book .title {
+  font-size: 16px;
+  color: #11101d;
+}
+
+.recommend-book .author {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.recommend-wrapper {
+  border-top: 4px solid #11101d;
+}
+
+.type-name {
+  margin-top: 20px;
+  margin-left: 24px;
+  font-weight: 600;
+}
+
+.today {
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 40px;
+  margin-left: 10px;
+  margin-bottom: 30px;
 }

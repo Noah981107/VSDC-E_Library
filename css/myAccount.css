@@ -1,0 +1,12 @@
+.myAccount-wrapper i {
+  font-size: 150px;
+  color: #11101d;
+}
+.myAccount-wrapper {
+  margin-top: 50px;
+  display: flex;
+}
+
+.space {
+  width: 30px;
+}

@@ -121,7 +121,7 @@
 <?php  
         for($page = 1; $page<= $number_of_page; $page++) {  
 ?>
-                  <a href = "generalBook.php?page=<?php echo($page);?>"><?php echo($page);?></a>
+                  <a href = "myBook.php?page=<?php echo($page);?>"><?php echo($page);?></a>
 <?php  
         }  
 ?>

@@ -1,3 +1,37 @@
-.title {
+@font-face {
+  font-family: "Saysettha OT";
+  src: url("saysettha_ot.eot?") format("eot"),
+    url("saysettha_ot.woff") format("woff"),
+    url("saysettha_ot.ttf") format("truetype"),
+    url("saysettha_ot.svg#SaysetthaOT") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.title1,
+.title2 {
   color: #11101d;
+}
+
+.title2 {
+  font-family: Saysettha OT;
+}
+
+.title-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.header-wrapper img {
+  margin-right: 17px;
 }

@@ -37,6 +37,16 @@
                 ");
             }
             else {
+
+                $query = "SELECT image, file_save_name FROM book WHERE id = '$bookId'";
+                $result = mysqli_query($conn, $query);
+                $row = mysqli_fetch_array($result);
+
+                $delete_image_name = $row['image'];
+                $delete_file_name = $row['file_save_name']; 
+                unlink("../bookImage/$delete_image_name");
+                unlink("../bookPdf/$delete_file_name");
+
                 $img_ex = pathinfo($img_name, PATHINFO_EXTENSION); //png
                 $img_ex_lc = strtolower($img_ex); //png
 

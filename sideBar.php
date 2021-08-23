@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="/css/sidebar2.css?after">
+<link rel="stylesheet" href="/css/sideBar2.css?after">
 <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -81,7 +81,7 @@
                 <span class="tooltip">My Book</span>
             </li>
             <li>
-                <a href="../myBook.php">
+                <a href="../modifyUserAccount.php">
                     <i class='bx bxs-user-account' ></i>
                     <span class="links_name">My Account</span>
                 </a>

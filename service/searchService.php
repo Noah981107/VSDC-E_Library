@@ -8,17 +8,13 @@
     $type = $_GET['type'];
     switch($category){
         case "all" :
-            $query = "SELECT * FROM book WHERE (title OR author LIKE '%$search%' 
-                      OR title = '$search'
-                      OR author = '$search')";
+		$query = "SELECT * FROM book WHERE title like '%$search%' OR author like '%$search%'";
             break;
         case "title" :
-            $query = "SELECT * FROM book WHERE (title LIKE '%$search%' 
-                      OR title = '$search')";
+            $query = "SELECT * FROM book WHERE title LIKE '%$search%'";
             break;
         case "author" :
-            $query = "SELECT * FROM book WHERE (author LIKE '%$search%' 
-                      OR author = '$search')";
+            $query = "SELECT * FROM book WHERE author LIKE '%$search%'";
             break;
     }
     switch($type){
@@ -54,7 +50,9 @@
     $result = mysqli_query($conn, $query2);
     $resultNum = mysqli_num_rows($result);
 ?>
-                <h1>A total of <?php echo($resultNum);?> books were found as a result of <?php echo($category);?> for <?php echo($search);?></h1>
+                <div class="result-message-wrapper">
+                    <div class="result-message"><?php echo($resultNum);?> results for <span>"<?php echo($search);?>"</span></div>
+                </div>
 <?php
     if($resultNum === 0){
         /*echo ("

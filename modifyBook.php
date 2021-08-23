@@ -40,12 +40,12 @@
                         <h5>Type</h5>
                         <select name = "type">
                             <option value = "general">General</option>
-                            <option value = "finalProject">Final Project</option>
+                            <option value = "finalProject">Final Project</option> 
                         </select>
                         <h5>Title</h5>
-                        <input type='text' name='title' value=<?php echo($title); ?> required>
+                        <input type='text' name='title' value="<?php echo($title); ?>" required>
                         <h5>Author</h5>
-                        <input type='text' name='author' value=<?php echo($author); ?> required>
+                        <input type='text' name='author' value="<?php echo($author);?>"" required>
                         <h5>Description</h5>
                         <textarea name="description" cols="30" rows="10" maxlength="80"> <?php echo($description); ?> </textarea>
                         

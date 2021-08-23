@@ -7,20 +7,21 @@
   if(isset($_GET["save"])) $file_save_name = $_GET["save"];
   else $file_save_name = "";
 ?>
-<?php 
-    echo($file_orig_name);
-    echo($file_save_name);
-?>
-<?php 
-    $fileDir = "../bookPdf/";
+<?php
+    ob_start(); 
+    $fileDir = "../bookPdf";
     $fullPath = $fileDir."/".$file_save_name;
     $length = filesize($fullPath);
 
+    header("Pragma: public");
+    header("Expires: 0");
     header("Content-Type: application/octet-stream");
+    header("Content-Disposition: attachment; filename=".iconv('utf-8','utf-8',$file_orig_name));
     header("Content-Length: $length");
-    header("Content-Disposition: attachment; filename=".iconv('utf-8','euc-kr',$file_orig_name));
     header("Content-Transfer-Encoding: binary");
 
-    $fh = fopen($fullPath, "r");
-    fpassthru($fh);
+    ob_clean();
+    flush();
+    readfile($fullPath);
+
 ?>
