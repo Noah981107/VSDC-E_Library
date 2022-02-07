@@ -1,5 +1,7 @@
 # VSDC-E_Library
 
+# 2022년 02월 07일 일자로 EC2 폐쇄
+
 <월드프렌즈 ICT 봉사단 - Team Gloducation>
 
 라오스 현지 교사들과 협업하여 진행하였습니다.\
