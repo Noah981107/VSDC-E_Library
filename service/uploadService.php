@@ -70,8 +70,7 @@
                         
 
                         $sql = "INSERT INTO book(type, image, file_orig_name, file_save_name, title, author, description, writer, registered_date)
-			VALUES('{$type}','{$new_img_name}', '{$file_name}', '{$new_file_name}', '{$title}', '{$author}', '{$description}','{$idx}', '{$registeredDate}')";
-			$sql = addslashes($sql);
+			            VALUES('{$type}','{$new_img_name}', '{$file_name}', '{$new_file_name}', '{$title}', '{$author}', '{$description}','{$idx}', '{$registeredDate}')";
                         mysqli_query($conn, $sql);
                         echo("
                             <script>
@@ -109,8 +108,5 @@
             </script>
 	    ");         
         }
-    }
-    else {
-        echo "hello";
     }
 ?>
